@@ -3,21 +3,21 @@
 <div class="row">
     <div class="col-md-6">
       
-        <form action="{{route('dataUser.edit')}}" method="POST">
+        <form action="{{route('dataUser.ubah')}}" method="POST">
             @csrf
-            @method('POST')
+            <input type="hidden" name="id" value="$data->id">
             <div class="form-group">
                 <label>Nama Penduduk</label>
-                <input class="form-control" type="text" name="nama" value="{{old('nama', $row->nama)}}" />
+                <input class="form-control" type="text" name="nama" value="{{$data->namaUser}}" />
             </div>
             <div class="form-group">
                 <label>NIK KTP</label>
-                <input class="form-control" type="text" name="ktp" value="{{old('ktp', $row->ktp)}}" />
+                <input class="form-control" type="text" name="ktp" value="{{$data->ktpUser}}" />
             </div>
      
   
             <div class="form-group">
-                <button class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
                 <a class="btn btn-danger" href="{{route('awal')}}">Kembali</a>
             </div>
         </form>

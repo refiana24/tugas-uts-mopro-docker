@@ -50,6 +50,7 @@ class userController extends Controller
     }
 
     public function editView(){
+        $data = dataUser::where('id',$this->request->id)->first();
         return view('edit',[
             'data' => $data,
             'id'=> $this->request->id ?? '',

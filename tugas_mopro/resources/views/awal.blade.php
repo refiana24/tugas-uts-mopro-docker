@@ -42,8 +42,8 @@
                 <td> {{$no++}} </td>
                 <td> {{$row->namaUser}} </td>
                 <td> {{$row->ktpUser}} </td>
-                <td> <a class="btn btn-sm btn-warning" href="{{route('ubah')}}?id=">edit</a>
-            <a class="btn btn-sm btn-danger" href="{{route('hapus')}}?id=">hapus</a></td>
+                <td> <a class="btn btn-sm btn-warning" href="{{route('ubah')}}?id={{$row->id}}">edit</a>
+            <a class="btn btn-sm btn-danger" href="{{route('hapus')}}?id={{$row->id}}">hapus</a></td>
             </tr>
             @endforeach
         </tbody>

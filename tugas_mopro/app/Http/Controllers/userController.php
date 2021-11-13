@@ -48,4 +48,11 @@ class userController extends Controller
             'id'=> $this->request->id ?? '',
         ]);
     }
+
+    public function editView(){
+        return view('edit',[
+            'data' => $data,
+            'id'=> $this->request->id ?? '',
+        ]);
+    }
 }

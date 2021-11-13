@@ -21,3 +21,4 @@ Route::post('/tambah','App\Http\Controllers\userController@tambah')->name('tamba
 Route::get('/ubah','App\Http\Controllers\userController@ubah')->name('ubah');
 Route::get('/hapus','App\Http\Controllers\userController@hapus')->name('hapus');
 Route::get('/','App\Http\Controllers\userController@tampilan')->name('awal');
+Route::get('/edit','App\Http\Controllers\userController@editView')->name('edit');

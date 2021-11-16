@@ -5,7 +5,7 @@
       
         <form action="{{route('dataUser.ubah')}}" method="POST">
             @csrf
-            <input type="hidden" name="id" value="$data->id">
+            <input type="hidden" name="id" value="{{$data->id}}">
             <div class="form-group">
                 <label>Nama Penduduk</label>
                 <input class="form-control" type="text" name="nama" value="{{$data->namaUser}}" />

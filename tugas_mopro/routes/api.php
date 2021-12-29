@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/simpan', 'App\Http\Controllers\Api\allController@simpan');
+Route::post('/ubah', 'App\Http\Controllers\Api\allController@ubah');
+Route::post('/hapus', 'App\Http\Controllers\Api\allController@hapus');
+Route::post('/data', 'App\Http\Controllers\Api\allController@data');
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

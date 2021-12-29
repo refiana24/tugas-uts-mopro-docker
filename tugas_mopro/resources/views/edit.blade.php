@@ -1,11 +1,10 @@
-@extends('app')
-@section('content')
+
 <div class="row">
     <div class="col-md-6">
       
-        <form action="{{route('dataUser.ubah')}}" method="POST">
+        <form action="{{route('ubah')}}" method="POST">
             @csrf
-            <input type="hidden" name="id" value="$data->id">
+            <input type="hidden" name="id" value="{{$data->id}}">
             <div class="form-group">
                 <label>Nama Penduduk</label>
                 <input class="form-control" type="text" name="nama" value="{{$data->namaUser}}" />
@@ -23,4 +22,3 @@
         </form>
     </div>
 </div>
-@endsection

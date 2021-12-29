@@ -1,24 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\dataUser;
 
-class userController extends Controller
+class allController extends Controller
 {
+    
     protected $r;
     function __construct(Request $r){
         $this->request=$r;
     }
 
-    public function tambah(){
+    public function simpan(){
         $tambah = new dataUser;
         $tambah->namaUser=$this->request->nama;
         $tambah->ktpUser=$this->request->ktp;
         $tambah->save();
 
-        return redirect()->back();
+        return response()->json([
+            'message' => 'Berhasil Menambah Data',
+        ]);
     }
 
     public function ubah(){
@@ -27,8 +31,9 @@ class userController extends Controller
             'namaUser' => $this->request->nama,
             'ktpUser' => $this->request->ktp,
         ]);
-
-        return redirect()->route('awal');
+        return response()->json([
+            'message' => 'Berhasil Mengubah Data',
+        ]);
     }
 
     public function hapus(){
@@ -37,23 +42,17 @@ class userController extends Controller
             'namaUser' => $this->request->nama,
             'ktpUser' => $this->request->ktp,
         ]);
-
-        return redirect()->back();
-    }
-
-    public function tampilan(){
-        $data = dataUser::all();
-        return view('awal',[
-            'data' => $data,
-            'id'=> $this->request->id ?? '',
+        return response()->json([
+            'message' => 'Berhasil Menghapus Data',
         ]);
     }
 
-    public function editView(){
-        $data = dataUser::where('id',$this->request->id)->first();
-        return view('edit',[
+    public function data(){
+        $data = dataUser::all();
+        
+        return response()->json([
+            'message' => 'Berhasil Mengambil Data',
             'data' => $data,
-            'id'=> $this->request->id ?? '',
         ]);
     }
 }

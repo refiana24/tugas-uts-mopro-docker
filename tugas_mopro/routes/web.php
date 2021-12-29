@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/tambah','App\Http\Controllers\userController@tambah')->name('tambah');
-Route::get('/ubah','App\Http\Controllers\userController@ubah')->name('ubah');
+Route::post('/ubah','App\Http\Controllers\userController@ubah')->name('ubah');
 Route::get('/hapus','App\Http\Controllers\userController@hapus')->name('hapus');
 Route::get('/','App\Http\Controllers\userController@tampilan')->name('awal');
 Route::get('/edit','App\Http\Controllers\userController@editView')->name('edit');
